@@ -1,1 +1,2 @@
 "Informacion general sobre skate"
+"Mas informacion sobre skate"
