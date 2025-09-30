@@ -35,13 +35,20 @@ def leer_notas_seguro(ruta: Path = TXT):
                 return ok, bad
             
 def imprimir_reporte(ok: list[float],bad: list[tuple[int, str]]) -> None:
-    print('--- Reporte Importacion ---')
-    print(f'Validos{len(ok)}')
-    print(f'no validos{len(bad)}')
+    print('--- reporte importacion ---')
+    print(f'✔️ Válidos{len(ok)}')
+    print(f'❌ No validos{len(bad)}')
     if bad:
-        print(' Lineas problematicas')
+        print('Lineas Problematicas')
         for i, s in bad:
-            print(f' - linea{i}: {s!r}')
+            print(f'- Lineas{i}: {s!r}')
     if ok:
-        n =len(ok)
+        n = len(ok)
+        print(f'Promedio: {sum(ok)/n: .4f} | Max:{max(ok)} Min:{min(ok)} n:{n}')
         
+if __name__=='__main__':
+    ok, bad = leer_notas_seguro
+    imprimir_reporte(ok, bad)
+    
+    
+    
